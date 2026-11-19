@@ -128,6 +128,16 @@ class ContaTest {
         assertEquals(100, conta.getSaldo(), 0.001);
     }
 
+    @Test
+    void depositar_ContaInativa_LancaIllegalStateException() {
+        var conta = new Conta("Maria");
+        conta.encerrar();
+
+        assertThrows(IllegalStateException.class, () -> conta.depositar(10));
+        assertEquals(0, conta.getSaldo(), 0.001);
+        assertFalse(conta.isAtiva());
+    }
+
     // =======================================================
     //  Testes para sacar
     //  Sugestão de testes:
