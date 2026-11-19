@@ -28,14 +28,8 @@ public class Conta {
      *   - A conta deve ser criada como ativa.
      */
     public Conta(String titular, double saldoInicial) {
-        if (titular == null || titular.isBlank())
-            throw new IllegalArgumentException("O titular não pode ser nulo ou vazio.");
-        if (saldoInicial < 0)
-            throw new IllegalArgumentException("O saldo inicial não pode ser negativo.");
-
-        this.titular = titular;
-        this.saldo = saldoInicial;
-        this.ativa = true;
+        // TODO: Implemente usando TDD
+        throw new UnsupportedOperationException();
     }
 
     /**
@@ -53,9 +47,8 @@ public class Conta {
      *   - O saldo deve ser atualizado corretamente.
      */
     public void depositar(double valor) {
-        validarValorPositivo(valor);
-        validarContaAtiva();
-        saldo += valor;
+        // TODO: Implemente usando TDD
+        throw new UnsupportedOperationException();
     }
 
     /**
@@ -67,12 +60,8 @@ public class Conta {
      *   - O saldo deve ser atualizado corretamente.
      */
     public void sacar(double valor) {
-        validarValorPositivo(valor);
-        validarContaAtiva();
-        if (valor > saldo) {
-            throw new IllegalStateException("Saldo insuficiente.");
-        }
-        saldo -= valor;
+        // TODO: Implemente usando TDD
+        throw new UnsupportedOperationException();
     }
 
     /**
@@ -84,11 +73,8 @@ public class Conta {
      *   - O saldo de ambas as contas deve ser atualizado corretamente.
      */
     public void transferir(Conta destino, double valor) {
-        if (!ativa || !destino.ativa) {
-            throw new IllegalStateException("As duas contas devem estar ativas.");
-        }
-        sacar(valor);
-        destino.depositar(valor);
+        // TODO: Implemente usando TDD
+        throw new UnsupportedOperationException();
     }
 
     /**
@@ -99,24 +85,7 @@ public class Conta {
      *   - A propriedade ativa deve ser alterada para false.
      */
     public void encerrar() {
-        if (!ativa) {
-            throw new IllegalStateException("A conta já está inativa.");
-        }
-        if (saldo != 0) {
-            throw new IllegalStateException("A conta só pode ser encerrada com saldo zero.");
-        }
-        ativa = false;
-    }
-
-    private void validarValorPositivo(double valor) {
-        if (valor <= 0) {
-            throw new IllegalArgumentException("O valor deve ser maior que zero.");
-        }
-    }
-
-    private void validarContaAtiva() {
-        if (!ativa) {
-            throw new IllegalStateException("A conta está inativa.");
-        }
+        // TODO: Implemente usando TDD
+        throw new UnsupportedOperationException();
     }
 }
