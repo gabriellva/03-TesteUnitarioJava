@@ -67,6 +67,9 @@ public class Conta {
      */
     public void sacar(double valor) {
         validarValorPositivo(valor);
+        if (valor > saldo) {
+            throw new IllegalStateException("Saldo insuficiente.");
+        }
         saldo -= valor;
     }
 
