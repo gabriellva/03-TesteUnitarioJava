@@ -99,6 +99,18 @@ class ContaTest {
     // =======================================================
 
 
+    @Test
+    void depositar_ValorValido_AtualizaSaldo() {
+        // Arrange
+        var conta = new Conta("Maria", 100);
+
+        // Act
+        conta.depositar(50);
+
+        // Assert
+        assertEquals(150, conta.getSaldo(), 0.001);
+    }
+
     // =======================================================
     //  Testes para sacar
     //  Sugestão de testes:
