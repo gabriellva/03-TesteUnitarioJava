@@ -147,6 +147,14 @@ class ContaTest {
         assertEquals(60, conta.getSaldo(), 0.001);
     }
 
+    @Test
+    void sacar_ValorZero_LancaIllegalArgumentException() {
+        var conta = new Conta("Maria", 100);
+
+        assertThrows(IllegalArgumentException.class, () -> conta.sacar(0));
+        assertEquals(100, conta.getSaldo(), 0.001);
+    }
+
     // =======================================================
     //  Testes para transferir
     //  Sugestão de testes:
